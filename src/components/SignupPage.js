@@ -14,6 +14,7 @@ function SignupPage() {
     try {
       const response = await axios.post('https://mednova-be.onrender.com/api/auth/signup', { email, password });
       if (response.data.success) {
+        localStorage.setItem('userEmail', email); // Store the email in local storage
         navigate('/login'); // Redirect to the login page after successful signup
       } else {
         setError(response.data.message);
@@ -26,10 +27,9 @@ function SignupPage() {
   return (
     <div className="signup-page">
       <div className="signup-container">
-        
         <form onSubmit={handleSubmit} className="signup-form">
           <div className="form-group">
-          <h1>Sign Up</h1>
+            <h1>Sign Up</h1>
             <label htmlFor="email">Email:</label>
             <input
               type="email"
