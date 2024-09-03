@@ -12,7 +12,7 @@ function LoginPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+      const response = await axios.post('https://mednova-be.onrender.com/api/auth/login', { email, password });
       if (response.data.success) {
         localStorage.setItem('token', response.data.token); // Store token in localStorage
         navigate('/questionnaire'); // Redirect to a desired page after successful login

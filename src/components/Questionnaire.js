@@ -35,7 +35,7 @@ function Questionnaire() {
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/api/questionnaire', { responses });
+      const response = await axios.post('https://mednova-be.onrender.com/api/questionnaire', { responses });
       const score = response.data.score; // Assuming the API returns a score
       navigate('/feedback', { state: { score } });
     } catch (error) {
