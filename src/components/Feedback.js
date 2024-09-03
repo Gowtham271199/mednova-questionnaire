@@ -20,7 +20,7 @@ function Feedback() {
   };
 
   const handleDataSubmission = (emailOptIn) => {
-    axios.post('http://localhost:5000/api/questionnaire/opt-in', { emailOptIn, score })
+    axios.post('https://mednova-be-1.onrender.com/api/questionnaire/opt-in', { emailOptIn, score })
       .then(response => {
         console.log('Opt-in data submitted successfully:', response.data);
         if (emailOptIn) {

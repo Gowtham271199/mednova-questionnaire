@@ -12,7 +12,7 @@ function SignupPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://mednova-be.onrender.com/api/auth/signup', { email, password });
+      const response = await axios.post('https://mednova-be-1.onrender.com/api/auth/signup', { email, password });
       if (response.data.success) {
         localStorage.setItem('userEmail', email); // Store the email in local storage
         navigate('/login'); // Redirect to the login page after successful signup

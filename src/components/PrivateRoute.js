@@ -11,7 +11,7 @@ const PrivateRoute = ({ element: Element }) => {
       const token = localStorage.getItem('token');
       if (token) {
         try {
-          const response = await axios.get('https://mednova-be.onrender.com/api/auth/verify', {
+          const response = await axios.get('https://mednova-be-1.onrender.com/api/auth/verify', {
             headers: { Authorization: `Bearer ${token}` },
           });
           if (response.data.success) {
